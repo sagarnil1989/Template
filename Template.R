@@ -1,7 +1,8 @@
 # R Template for Data Processing
 #dataset<-read.csv("Dataset//marketing_dataset.csv",sep=";",header = TRUE)
 #dataset<-read.csv('Dataset//Data.csv')
-dataset = read.csv('Dataset//Salary_Data.csv')
+#dataset = read.csv('Dataset//Salary_Data.csv')
+dataset = read.csv('Dataset//50_Startups.csv')
 
 # Taking care of missing data
 dataset$Age = ifelse(is.na(dataset$Age),

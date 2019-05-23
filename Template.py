@@ -7,12 +7,12 @@ import pandas as pd
 # Importing the dataset
 #dataset = pd.read_csv('Dataset//marketing_dataset.csv', delimiter = ';', header=0)
 #data=pd.read_csv('Dataset//Data.csv')
-dataset = pd.read_csv('Dataset//Salary_Data.csv')
+dataset = pd.read_csv('Dataset//50_Startups.csv')
 
 
 # If we are using supervised model
-X = pd.DataFrame(dataset.iloc[:,:-1].values)
-y = pd.DataFrame(dataset.iloc[:, 1].values)
+X = pd.DataFrame(dataset.iloc[:,:-2].values)
+y = pd.DataFrame(dataset.iloc[:, 4].values)
 
 # Taking care of missing data
 from sklearn.preprocessing import Imputer
@@ -24,8 +24,8 @@ X[:, 1:3] = imputer.transform(X[:, 1:3])
 # Encoding the Independent Variable
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 labelencoder_X = LabelEncoder()
-X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
-onehotencoder = OneHotEncoder(categorical_features = [0])
+X[:, 3] = labelencoder_X.fit_transform(X[:, 3])
+onehotencoder = OneHotEncoder(categorical_features = [3])
 X = onehotencoder.fit_transform(X).toarray()
 # Encoding the Dependent Variable
 labelencoder_y = LabelEncoder()
