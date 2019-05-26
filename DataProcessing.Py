@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
+#-----------------------------------------------------------------------------
 # Taking care of missing data
 from sklearn.preprocessing import Imputer
 imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
@@ -15,7 +15,7 @@ Y = Y.reshape(-1,1)
 Y = imp.fit_transform(Y)
 Y = Y.reshape(-1)
 
-
+#-----------------------------------------------------------------------------
 # Encoding categorical data
 
 # Label Encoder only converts Charter in Numeric variable but doesnor split onto columns
@@ -33,9 +33,7 @@ dataset=pd.get_dummies(dataset)
 
 #Encoding Generic- only independent variable
 X=pd.get_dummies(X)
-
-
-
+#-----------------------------------------------------------------------------
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
