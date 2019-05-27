@@ -55,4 +55,20 @@ lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y_train)
 y_pred = lin_reg_2.predict(X_poly)
 #-----------------------------------------------------------------------------
-
+# Fitting the SVR Model to the dataset ( Feature Scaling is required)-check feature scaling
+from sklearn.svm import SVR
+regressor=SVR(kernel='rbf', gamma='auto')
+regressor.fit(X,y)
+# Predicting a new result
+y_pred = sc_y.inverse_transform(regressor.predict(sc_X.transform(np.array([[6.5]]))))
+#transform func need array
+#-----------------------------------------------------------------------------
+# Fitting Decision Tree Regression to the dataset
+from sklearn.tree import DecisionTreeRegressor
+regressor = DecisionTreeRegressor(random_state = 0)
+regressor.fit(X, y)
+#-----------------------------------------------------------------------------
+# Fitting Random Forest Regression to the dataset
+from sklearn.ensemble import RandomForestRegressor
+regressor = RandomForestRegressor(n_estimators = 10, random_state = 0)
+regressor.fit(X, y)

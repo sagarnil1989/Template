@@ -1,4 +1,4 @@
-# Taking care of missing data
+#----Taking care of missing data----
 dataset$Age = ifelse(is.na(dataset$Age),
                      ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),
                      dataset$Age)
@@ -6,7 +6,7 @@ dataset$Salary = ifelse(is.na(dataset$Salary),
                         ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
                         dataset$Salary)
 
-# Encoding categorical data
+#----Encoding categorical data----
 #Label encoder
 dataset$Country = factor(dataset$Country,
                          levels = c('France', 'Spain', 'Germany'),
@@ -17,3 +17,6 @@ dataset$Purchased = factor(dataset$Purchased,
 dataset$State = factor(dataset$State,
                        levels = c('New York', 'California', 'Florida'),
                        labels = c(1, 2, 3))
+
+#----Encoding the target feature as factor----
+dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))

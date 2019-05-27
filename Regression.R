@@ -47,3 +47,35 @@ predict(poly_reg, data.frame(Level = 6.5,
                              Level2 = 6.5^2,
                              Level3 = 6.5^3,
                              Level4 = 6.5^4))
+
+#----Fitting SVR to the dataset----
+# install.packages('e1071')
+library(e1071)
+regressor = svm(formula = Salary ~ .,
+                data = dataset,
+                type = 'eps-regression',
+                kernel = 'radial')
+# Predicting a new result
+y_pred = predict(regressor, data.frame(Level = 6.5))
+#----Fitting Decision Tree Regression to the dataset----
+# install.packages('rpart')
+library(rpart)
+regressor = rpart(formula = Salary ~ .,
+                  data = dataset,
+                  control = rpart.control(minsplit = 1))
+
+# Predicting a new result with Decision Tree Regression
+y_pred = predict(regressor, data.frame(Level = 6.5))
+
+
+#----Fitting Random Forest Regression to the dataset----
+install.packages('randomForest')
+library(randomForest)
+set.seed(1234)
+regressor = randomForest(x = dataset[-2],
+                         y = dataset$Salary,
+                         ntree = 500)
+
+# Predicting a new result with Random Forest Regression
+y_pred = predict(regressor, data.frame(Level = 6.5))
+
