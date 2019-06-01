@@ -1,8 +1,12 @@
 #Regression model with 1 dependent variable
 # Importing the libraries
-import numpy as np
-import matplotlib.pyplot as plt
+import os
 import pandas as pd
+from pandas import DataFrame
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+get_ipython().magic('matplotlib inline')
 #-----------------------------------------------------------------------------
 #Visualising the Training set results
 plt.scatter(X_train, y_train, color = 'red')
