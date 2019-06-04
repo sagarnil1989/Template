@@ -12,7 +12,8 @@
 install.packages('arules')
 library(arules)
 dataset = read.transactions('Dataset//Market_Basket_Optimisation.csv', sep = ',', rm.duplicates = TRUE)
-
+#----Missing Values Columnwise----
+colSums(is.na(dataset))
 # -------Splitting the dataset into the Training set and Test set----
 # install.packages('caTools')
 library(caTools)

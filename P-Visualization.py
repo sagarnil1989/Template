@@ -1,5 +1,5 @@
 #Regression model with 1 dependent variable
-# Importing the libraries
+#----Importing the libraries----
 import os
 import pandas as pd
 from pandas import DataFrame

@@ -1,3 +1,5 @@
+#----Missing Values Columnwise----
+colSums(is.na(dataset))
 #----Selecting a specific row/column or both: Subsetting/Slicing----
 data1[2,2]
 data1[,2]

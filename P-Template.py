@@ -12,7 +12,8 @@ import pandas as pd
 #dataset = pd.read_csv('Dataset//Position_Salaries.csv') #Single Polynomial Regression
 dataset = pd.read_csv('Dataset//Social_Network_Ads.csv') #Logistic Regression
 #-----------------------------------------------------------------------------
-
+#----get all the missing value in dataset----
+dataset.isnull().sum()
 # If we are using supervised model
 #X = pd.DataFrame(dataset.iloc[:,1:2].values)
 #y = pd.DataFrame(dataset.iloc[:,2].values)

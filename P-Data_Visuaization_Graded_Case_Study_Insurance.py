@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sb
 # Importing the dataset of xlsx format
-xls = pd.ExcelFile('Dataset//Data Visualization Graded Case Study Dataset.xlsx')
-data = pd.read_excel(xls, 'Data')
-data_desc = pd.read_excel(xls, 'Desc')
+ad_excel(xls, 'Data')
+data_desc = pdxls = pd.ExcelFile('Dataset//Data Visualization Graded Case Study Dataset.xlsx')
+data = pd.re.read_excel(xls, 'Desc')
 data.dtypes
 data.head()
 #Cleaning up the independent varibales
