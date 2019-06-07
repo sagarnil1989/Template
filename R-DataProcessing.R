@@ -90,7 +90,18 @@ airquality$Ozone[is.na(airquality$Ozone)]=mean(airquality$Ozone, na.rm = TRUE)
 #check mice func in mice package
 #na.roughfix in random forest
 
-
-
-
+data("iris")
+table(iris$Species)
+iris$setosa=ifelse(iris$Species=="setosa",1,0)
+iris$versicolor=ifelse(iris$Species=="versicolor",1,0)
+iris$virginica=ifelse(iris$Species=="virginica",1,0)
+library(dummies)
+temp1=dummy(iris$Species)
+iris=cbind(iris,temp1)
+#Outliner
+#Boxplot, FiveNumberSummary, IQR
+boxplot(dataset$salary)
+IQR(dataset$salary)
+head(mtcars)
+IQR(mtcars$mpg)
 
