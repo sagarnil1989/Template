@@ -29,7 +29,7 @@ row_na_val=(rowSums(is.na(dataset))
             
             plot=hist(dataset$mou_Mean,breaks = seq(0,15000,by=100),xlim = c(0,2000))
             
-            ggplot(data=dataset, aes(x = mou_Mean, fill = factor(churn)))+
+            ggplot(data=dataset, aes(x = income, fill = factor(churn)))+
               scale_x_continuous(limits = c(0,2000))+
               scale_y_continuous(limits = c(0,10))+
               geom_bar(stat='count', na.rm = TRUE,position='dodge',width=100) +
