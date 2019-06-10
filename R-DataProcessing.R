@@ -103,5 +103,29 @@ iris=cbind(iris,temp1)
 boxplot(dataset$salary)
 IQR(dataset$salary)
 head(mtcars)
-IQR(mtcars$mpg)
+# Inter quartile range- difference between 1st and 3rd quartile
+IQR(mtcars$mpg)*1.5
 
+summary(mtcars$mpg)
+#outliner if any obs>= 3rd quartile + 1.5* IQR
+22.80+11.06
+#outliner if any obs<= 1st quartile - 1.5* IQR
+15.43-11.06
+data("mtcars")
+box_mpg=boxplot(mtcars$ç)
+names(box_mpg)
+box_mpg$out
+mtcars_1<-edit(mtcars)
+box_mpg=boxplot(mtcars_1$mpg)
+#Corelation
+#Relationship between 2 variables
+#meaing ful only for numeric data
+#Type: Positive/Ndgative
+#value between -1 and +1
+cor(iris$Sepal.Length,iris$Sepal.Width)
+plot(iris$Sepal.Length,iris$Sepal.Width)
+cor(iris)
+cor(mtcars)
+iris_1=iris(dataset,-Species)
+library(corrgram)
+corrgram(mtcars)

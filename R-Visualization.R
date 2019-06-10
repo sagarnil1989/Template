@@ -220,3 +220,17 @@ plot_ly(final_data, z = collisions_no, text = hover,locations=code, type = 'chor
         locationmode = 'USA-states', color = collisions_no, colors = k  ,
         marker = list(line = l), colorbar = list(title = "Number of vehicle Collisions")) %>%
   layout(title = 'Number of vehicle Collisions<br>(Hover for breakdown)', geo = g)
+#----Base geaph in iris
+ir<-iris
+str(ir)
+plot(iris$Petal.Width,iris$Petal.Length,
+     main = c("Petal width vs petal length"),
+     xlab = c("Petal Width"),ylab = c("Petal Length"), 
+     col=iris$Species, pch=4,cex=as.numeric(iris$Species))
+legend(0.2,7,c("setosa","versicolor","virginica"),pch=1:3)
+hist(iris$Sepal.Length,col="orange",labels = TRUE,freq=TRUE)
+hist(iris$Sepal.Length,xlim=c(0,17),breaks =20)
+#adding multiple plots
+par(mfrow=c(1,2))
+dev.off()
+
